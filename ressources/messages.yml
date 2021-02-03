@@ -1,0 +1,32 @@
+##########################################################################
+#                UltimatePing by Neiyko - Messages file                  #
+#                 Check frequently for plugin updates!                   #
+##########################################################################
+
+#####################
+# Permission System #
+#####################
+permission:
+  no-perm: "&cYou do not have permission to execute this command !"
+  no-reload-perm: "&cYou do not have permission to execute this command!"
+
+#####################
+# Classic messages #
+#####################
+
+#If the command is not executed by a player
+not-instance-of-player: "&cYou must be logged in as a player to execute this command!"
+#Message when /ping command
+ping-message: "&7Your ping is: &6%ping%&bms"
+#Message when /ping [player] command
+ping-other-message: "&7The ping of &a%target% &7is: &6%ping%&bms"
+#Message if the player was not found
+player-not-found: "&cThe &b%target% &cplayer was not found!"
+#Reload message
+reloadComplete: "&cThe plugin has been reloaded in: &a%timerMS% &bms"
+
+
+#####################
+#  Error  messages  #
+#####################
+reloadError: "&8[&cError&8] &cThe plugin failed to reload"

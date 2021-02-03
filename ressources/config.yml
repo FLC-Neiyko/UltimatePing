@@ -1,0 +1,19 @@
+##########################################################################
+#              UltimatePing by Neiyko - Configuration file               #
+#                 Check frequently for plugin updates!                   #
+##########################################################################
+
+#####################
+# Permission System #
+#####################
+permission:
+  # Set this to true if you want to use the permission system.
+  enabled: false
+  ping: "ultimateping.use"
+  ping-other: "ultimateping.use.other"
+
+  # For the modification of the message this can be found in the messages.yml file.
+
+  # Permission for the command: /ultimateping reload
+  # For the modification of the message this can be found in the messages.yml file.
+  reload-permission: "ultimateping.reload"
