@@ -1,7 +1,6 @@
 name: UltimatePing
 version: 1.0.0
 main: fr.neiyko.ultimateping.Main
-api-version: 1.16
 authors: [ neiyko ]
 description: Plugin permettant de voir son ping
 commands:
