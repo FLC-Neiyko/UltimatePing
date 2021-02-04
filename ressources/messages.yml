@@ -11,7 +11,7 @@ permission:
   no-reload-perm: "&cYou do not have permission to execute this command!"
 
 #####################
-# Classic messages #
+# Classic messages  #
 #####################
 
 #If the command is not executed by a player

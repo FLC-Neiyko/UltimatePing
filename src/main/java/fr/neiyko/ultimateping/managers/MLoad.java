@@ -24,10 +24,6 @@ public class MLoad {
         pluginEnable();
     }
 
-    public void pluginUnLoad() {
-        pluginDisable();
-    }
-
     public void pluginEnable() {
 
         main.logConsole(Level.INFO, "----");
