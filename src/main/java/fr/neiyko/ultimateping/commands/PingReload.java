@@ -16,6 +16,7 @@ public class PingReload implements CommandExecutor {
 
         if (!(sender instanceof Player)){
             sender.sendMessage(main.getMessages("not-instance-of-player").replace("&", "§"));
+            return false;
         }
 
         Player p = (Player) sender;
