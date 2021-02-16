@@ -6,5 +6,3 @@ description: Plugin permettant de voir son ping
 commands:
   ping:
     description: Plugin to see your ping and those of others
-  pingreload:
-    description: Used to reload the plugin

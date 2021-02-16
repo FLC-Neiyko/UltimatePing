@@ -7,6 +7,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.PluginManager;
 
 public class Ping implements CommandExecutor {
 
@@ -27,12 +28,28 @@ public class Ping implements CommandExecutor {
             }
             String ping = "" + PingUtil.getPing(p);
             p.sendMessage(main.getMessages("ping-message").replace("&", "§").replace("%ping%", ping));
+        } else if(args.length == 1 && args[0].equalsIgnoreCase("reload")) {
+            if (main.hasPermission(p, "permission.reload-permission")) {
+                PluginManager pm = main.getServer().getPluginManager();
+                long start_timer = System.currentTimeMillis();
+                try {
+                    pm.disablePlugin(pm.getPlugin("UltimatePing"));
+                    pm.enablePlugin(pm.getPlugin("UltimatePing"));
+                } catch (Exception e) {
+                    p.sendMessage(main.getMessages("reloadError").replace("&", "§"));
+                    return false;
+                }
+                long end_timer = System.currentTimeMillis();
+                p.sendMessage(main.getMessages("reloadComplete").replace("%timerMS%", start_timer - end_timer + "").replace("&", "§"));
+            } else {
+                p.sendMessage(main.getMessages("permission.no-reload-perm").replace("&", "§"));
+            }
         } else {
             if (!permEnabled(p, main.fileConfigConfiguration.getString("permission.ping-other"))) {
                 p.sendMessage(main.getMessages("permission.no-perm").replace("&", "§"));
                 return true;
             }
-            String target = (args.length > 0) ? args[0] : null;
+            String target = args[0];
             Player targetP = Bukkit.getPlayer(target);
             if (targetP == null) {
                 p.sendMessage(main.getMessages("player-not-found").replace("&", "§").replace("%target%", target));
